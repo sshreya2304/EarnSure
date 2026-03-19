@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile | EarnSure</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <main class="main-content" style="max-width: 800px; margin: auto;">
+            <div class="card" style="text-align:center;">
+                <div style="width:120px; height:120px; background:#ddd; border-radius:50%; margin: 0 auto 20px auto; display:flex; align-items:center; justify-content:center; font-size:3rem;">👤</div>
+                <h2 id="dispName">User Name</h2>
+                <p id="dispEmail">user@example.com</p>
+                <hr style="margin:20px 0; border:0; border-top:1px solid #eee;">
+                
+                <div style="text-align:left; display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                    <div>
+                        <label style="font-weight:bold; color:#667eea;">Phone</label>
+                        <p id="dispPhone">+91 0000000000</p>
+                    </div>
+                    <div>
+                        <label style="font-weight:bold; color:#667eea;">Primary Platform</label>
+                        <p>Uber / Zomato</p>
+                    </div>
+                </div>
+                <button class="btn-login" style="margin-top:30px; background:#667eea; color:white;" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+            </div>
+        </main>
+    </div>
+    <script>
+        // Pull data from the registration we did earlier
+        const user = JSON.parse(localStorage.getItem('earnsure_user'));
+        if(user) {
+            document.getElementById('dispName').innerText = user.name || "Agent User";
+            document.getElementById('dispEmail').innerText = user.email || "No Email Provided";
+        }
+    </script>
+</body>
+</html>

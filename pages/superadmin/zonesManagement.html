@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zone Management | EarnSure Admin</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/components.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../../assets/logo.jpg" onerror="this.onerror=null; this.src='../../assets/logo.png';" alt="Logo" style="width: 65px; border-radius: 8px;">
+                <span>EarnSure Admin</span>
+            </div>
+            <nav>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="claimsManagement.html">📩 Claims Queue</a>
+                <a href="zonesmanagement.html" class="active">⚙️ Manage Zones</a>
+                <a href="#" class="logout-btn">🚪 Logout</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="header">
+                <div>
+                    <h1>Zone Controls</h1>
+                    <p style="color: var(--text-muted);">Adjust risk parameters and coverage availability.</p>
+                </div>
+            </header>
+
+            <div class="grid-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                
+                <div class="card">
+                    <h3 class="card-title">Update Zone Risk</h3>
+                    <form id="zoneUpdateForm">
+                        <div class="input-group-dash">
+                            <label>Select Sector</label>
+                            <select id="manageZoneSelect" class="input-field">
+                                <option value="downtown">Downtown Core</option>
+                                <option value="industrial">Industrial West</option>
+                                <option value="suburban">Suburban North</option>
+                            </select>
+                        </div>
+                        <div class="input-group-dash">
+                            <label>New Risk Level (%)</label>
+                            <input type="number" id="newRiskScore" class="input-field" placeholder="e.g. 85">
+                        </div>
+                        <button type="submit" class="btn-primary">Apply Changes</button>
+                    </form>
+                </div>
+
+                <div class="card" style="border-top: 5px solid var(--danger);">
+                    <h3 class="card-title">⚠️ Emergency Alert</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">
+                        Send a push notification to all active agents in a specific zone.
+                    </p>
+                    <div class="input-group-dash">
+                        <textarea id="alertMessage" class="input-field" rows="3" placeholder="High accident rate reported in this sector. Drive carefully."></textarea>
+                    </div>
+                    <button class="btn-primary" style="background: var(--danger);" onclick="sendAlert()">Broadcast Alert</button>
+                </div>
+
+                <div class="card" style="grid-column: span 2;">
+                    <h3 class="card-title">Coverage Status by Region</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Region</th>
+                                    <th>Current Risk</th>
+                                    <th>Coverage Status</th>
+                                    <th>Policy Multiplier</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="manageZonesTable">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="../../js/header.js"></script>
+    <script type="module">
+        import { Modal } from '../../js/modal.js';
+        import { RiskColor } from '../../js/riskColor.js';
+
+        // Mock function for the demo
+        window.sendAlert = () => {
+            const msg = document.getElementById('alertMessage').value;
+            if(msg) {
+                Modal.show("Alert Broadcasted", "All agents in the selected zone have been notified.", "success");
+                document.getElementById('alertMessage').value = '';
+            }
+        };
+
+        // Render Management Table
+        const renderTable = () => {
+            const zones = [
+                { id: 1, name: 'Downtown Core', risk: 88, status: 'Active', mult: '1.0x' },
+                { id: 2, name: 'Industrial West', risk: 42, status: 'Suspended', mult: '0.0x' }
+            ];
+            
+            const tbody = document.getElementById('manageZonesTable');
+            tbody.innerHTML = zones.map(z => `
+                <tr>
+                    <td><strong>${z.name}</strong></td>
+                    <td style="color:${RiskColor.getByScore(z.risk).hex}">${z.risk}%</td>
+                    <td><span class="badge ${z.status === 'Active' ? 'badge-success' : 'badge-danger'}">${z.status}</span></td>
+                    <td>${z.mult}</td>
+                    <td><button class="btn-small btn-primary">Toggle Status</button></td>
+                </tr>
+            `).join('');
+        };
+
+        renderTable();
+    </script>
+</body>
+</html>

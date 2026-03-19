@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | EarnSure</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+       <aside class="sidebar">
+    <div class="sidebar-header">
+        <img src="../../assets/logo.jpg" alt="EarnSure Logo" class="sidebar-logo">
+        <h3>EarnSure</h3>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="dashboard.html" class="active">📊 Overview</a>
+        <a href="../../index.html" class="logout" style="margin-top: auto; border-top: 1px solid #334155;">🚪 Logout</a>
+    </nav>
+</aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h2>Platform Analytics</h2>
+                <div class="admin-badge">Super Admin</div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h4>Total Insured Workers</h4>
+                    <p class="stat-value">1,284</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Total Premium Collected</h4>
+                    <p class="stat-value">$42,500</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Pending Payouts</h4>
+                    <p class="stat-value text-warning">14</p>
+                </div>
+            </section>
+
+            <section class="table-container card">
+                <h3>Recent Claims for Review</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Worker ID</th>
+                            <th>Platform</th>
+                            <th>Loss Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="claimsTableBody">
+                        <tr>
+                            <td>#ES-992</td>
+                            <td>Uber Eats</td>
+                            <td>$120.00</td>
+                            <td><span class="badge warning">Pending</span></td>
+                            <td><button class="btn-small">Review</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

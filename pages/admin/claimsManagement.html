@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Claims | EarnSure Admin</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <main class="main-content">
+            <div class="top-bar">
+                <h2>Pending Income Claims</h2>
+                <a href="dashboard.html" class="btn-small" style="background:#64748b; color:white; text-decoration:none;">← Back</a>
+            </div>
+            
+            <div class="table-container card">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Worker ID</th>
+                            <th>Claim Amount</th>
+                            <th>Proof</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="claimsList">
+                        <tr>
+                            <td>#ES-2045</td>
+                            <td>$150.00</td>
+                            <td><a href="#" style="color:#2563eb;">view_statement.png</a></td>
+                            <td>
+                                <button class="btn-small" onclick="handleClaim(this, 'Approved')" style="background:#10b981; color:white; border:none;">Approve</button>
+                                <button class="btn-small" onclick="handleClaim(this, 'Rejected')" style="background:#ef4444; color:white; border:none; margin-left:5px;">Reject</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script>
+        function handleClaim(btn, status) {
+            const row = btn.closest('tr');
+            alert(`Claim ${status} successfully!`);
+            row.style.opacity = '0.3';
+            btn.parentElement.innerHTML = `<span class="badge">${status}</span>`;
+        }
+    </script>
+</body>
+</html>

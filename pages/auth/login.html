@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | EarnSure</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/auth.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="glass-card">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="../../assets/logo.jpg" onerror="this.onerror=null; this.src='../../assets/logo.png';" alt="Logo" style="width: 120px; border-radius: 10px;">
+                <h2 style="margin-top:10px;">EarnSure</h2>
+            </div>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="email@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <div class="input-group">
+                    <label>Login as:</label>
+                    <select id="role">
+                        <option value="agent">Agent (Field Worker)</option>
+                        <option value="captain">Captain (Manager)</option>
+                        <option value="admin">Admin (Staff)</option>
+                        <option value="superadmin">Super Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-login">Sign In</button>
+            </form>
+            <p class="footer-text">New here? <a href="register.html">Create Account</a></p>
+        </div>
+    </div>
+    <script type="module" src="./login.js"></script>
+</body>
+</html>

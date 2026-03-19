@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zone Overview | EarnSure Admin</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="../../assets/logo.jpg" onerror="this.onerror=null; this.src='../../assets/logo.png';" alt="EarnSure" style="width: 65px; border-radius: 8px;">
+                <span>EarnSure Admin</span>
+            </div>
+            <nav>
+                <a href="dashboard.html">📊 Dashboard</a>
+                <a href="claimsManagement.html">📩 Claims Queue</a>
+                <a href="zoneoverview.html" class="active">📍 Zone Analysis</a>
+                <a href="#" class="logout-btn">🚪 Logout</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="header">
+                <div class="header-left">
+                    <h1>Regional Risk Analysis</h1>
+                    <p style="color: var(--text-muted);">Monitoring 12 active city sectors</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-primary" onclick="window.print()">📥 Download Report</button>
+                </div>
+            </header>
+
+            <div class="grid-container" style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+                
+                <div class="card">
+                    <h3 class="card-title">Risk Parameters</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                        <li style="margin-bottom: 15px;">
+                            <span class="badge badge-success">Low Risk</span>
+                            <p style="margin-top: 5px; font-size: 0.8rem;">Claim ratio < 5% of premiums.</p>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <span class="badge badge-pending">Moderate</span>
+                            <p style="margin-top: 5px; font-size: 0.8rem;">Claim ratio between 5% - 15%.</p>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <span class="badge badge-danger">High Alert</span>
+                            <p style="margin-top: 5px; font-size: 0.8rem;">Immediate intervention required.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <span>City Sector Performance</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Sector Name</th>
+                                    <th>Active Agents</th>
+                                    <th>Risk Index</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="zoneOverviewBody">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="../../js/header.js"></script>
+    <script type="module" src="../../js/zoneOverview.js"></script>
+</body>
+</html>

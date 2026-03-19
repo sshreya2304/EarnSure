@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Worker Directory | EarnSure Admin</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header"><h3>EarnSure Admin</h3></div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">🏠 Overview</a>
+                <a href="#" class="active">👷 Worker List</a>
+                <a href="claimsManagement.html">⚖️ Manage Claims</a>
+                <a href="../../index.html" class="logout">🚪 Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h2>Worker Directory</h2>
+                <input type="text" id="workerSearch" placeholder="Search by name or ID..." style="padding: 8px; border-radius: 5px; border: 1px solid #ddd; width: 250px;">
+            </header>
+
+            <div class="table-container card">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Platform</th>
+                            <th>Policy Type</th>
+                            <th>Risk Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="workerTableBody">
+                        </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="./workerList.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "POL-BASIC",
+    "name": "Starter Shield",
+    "premium": 5.00,
+    "coveragePercentage": 60,
+    "maxPayout": 500,
+    "description": "Essential protection against major platform outages.",
+    "color": "#64748b"
+  },
+  {
+    "id": "POL-PRO",
+    "name": "Premium Guard",
+    "premium": 15.00,
+    "coveragePercentage": 90,
+    "maxPayout": 1200,
+    "description": "Full protection including low order volume and technical glitches.",
+    "color": "#2563eb"
+  }
+]

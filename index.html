@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarnSure | Secure Your Gig Income</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <style>
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0052cc 0%, #28a745 100%);
+            color: white;
+            text-align: center;
+        }
+        .main-logo {
+            width: 300px;
+            max-width: 80vw;
+            margin-bottom: 0;
+        }
+        .hero h1 {
+            margin-top: -80px; /* Negative margin to forcefully pull the text up */
+            line-height: 1;    /* Removes extra invisible space above the letters */
+        }
+        .cta-buttons { margin-top: 30px; }
+        .btn {
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .btn-white { background: white; color: #0052cc; }
+        .btn-outline { border: 2px solid white; color: white; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <img src="./assets/logo.jpg" onerror="this.onerror=null; this.src='./assets/logo.png';" alt="EarnSure Logo" class="main-logo">
+        <h1>Welcome to EarnSure</h1>
+        <p>The first insurance platform designed specifically for the gig economy.</p>
+        <div class="cta-buttons">
+            <a href="./pages/auth/login.html" class="btn btn-outline">Login</a>
+            <a href="./pages/auth/register.html" class="btn btn-white">Get Protected</a>
+        </div>
+    </section>
+</body>
+</html>

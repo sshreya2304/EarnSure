@@ -1,0 +1,143 @@
+/* css/auth.css - Full Replacement */
+
+/* 1. Background and Base Layout */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Using a gradient that matches your Logo's Blue and Green */
+    background: linear-gradient(135deg, #0052cc 0%, #28a745 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. The Login/Register Card */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 24px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 3. Logo and Header Styling */
+.auth-header img {
+    width: 90px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.auth-header h2 {
+    margin: 10px 0 5px 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.auth-header p {
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 4. Form Inputs and Labels */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white; /* Text color inside the box */
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box; /* Prevents input from overflowing */
+    transition: 0.3s;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+}
+
+/* FIX: This makes the dropdown options visible on all browsers */
+.input-group select option {
+    background-color: #1e293b; /* Dark background for the list */
+    color: white;              /* White text for the list */
+    padding: 10px;
+}
+
+/* 5. Buttons */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #ffffff;
+    color: #0052cc; /* Blue text to match brand */
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 6. Footer Links */
+.footer-text {
+    margin-top: 25px;
+    font-size: 0.85rem;
+}
+
+.footer-text a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    transition: 0.3s;
+}
+
+.footer-text a:hover {
+    border-bottom-color: #fff;
+}
+
+/* Step visibility for Registration */
+.form-step {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

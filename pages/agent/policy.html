@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Protection Policy | EarnSure</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header"><h3>EarnSure</h3></div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">📊 My Earnings</a>
+                <a href="claims.html">📩 File a Claim</a>
+                <a href="payouts.html">💰 Payouts</a>
+                <a href="#" class="active">🛡️ My Policy</a>
+                <a href="../../index.html" class="logout">🚪 Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h2>Insurance Certificate</h2>
+                <button class="btn-small" style="background:#000; color:white; border:none;" onclick="window.print()">Download PDF</button>
+            </header>
+
+            <div class="card" style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; border: none; position: relative; overflow: hidden;">
+                <div style="position: absolute; right: -20px; top: -20px; font-size: 8rem; opacity: 0.1;">🛡️</div>
+                <h3 style="margin-top: 0; color: #38bdf8;">Premium Shield Plus</h3>
+                <p style="font-family: monospace; letter-spacing: 2px;">POLICY ID: ES-IP-9928340</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                    <div>
+                        <label style="font-size: 0.7rem; text-transform: uppercase; opacity: 0.7;">Coverage</label>
+                        <p style="font-weight: bold; font-size: 1.2rem;">90% Income Protection</p>
+                    </div>
+                    <div>
+                        <label style="font-size: 0.7rem; text-transform: uppercase; opacity: 0.7;">Status</label>
+                        <p style="font-weight: bold; color: #4ade80;">ACTIVE</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid" style="margin-top: 20px;">
+                <div class="stat-card">
+                    <h4>Monthly Premium</h4>
+                    <p class="stat-value">$15.00</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Max Payout</h4>
+                    <p class="stat-value">$1,200.00</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Waiting Period</h4>
+                    <p class="stat-value">0 Days</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3>What's Covered?</h3>
+                <ul style="padding-left: 20px; line-height: 1.8;">
+                    <li>Income loss due to platform technical glitches.</li>
+                    <li>Sudden drop in order volume in your registered sector.</li>
+                    <li>Temporary health issues preventing work (up to 7 days).</li>
+                    <li>Unfair account deactivation (under review).</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
